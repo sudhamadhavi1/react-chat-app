@@ -1,0 +1,49 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.channel-name {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0px;
+}
+.description {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0px;
+  color: rgb(196, 195, 195);
+}
+
+.header-right-section {
+  display: flex;
+  align-items: center;
+  color: rgb(196, 195, 195);
+}
+.curret-users {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0px;
+}
+.total-users {
+  font-size: 18px;
+  font-weight: 400;
+  margin-left: 4px;
+  border-left: 2px solid rgb(196, 195, 195);
+  margin-right: 8px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 4px;
+}
+
+.people-icon {
+  height: 24px;
+  width: 24px;
+}
