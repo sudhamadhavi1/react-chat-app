@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { v4 as uuid } from 'uuid';
 import InputEmoji from 'react-input-emoji';
+import data from '@emoji-mart/data';
+import Picker from '@emoji-mart/react';
 
 import MessageDelivered from '../MessageDelivered/MessageDelivered';
 import './index.css';
@@ -13,9 +15,63 @@ const userNames = [
   { user: 'Elin', backgroundColor: '#dbdc64' },
 ];
 
+const custom = [
+  {
+    id: 'github',
+    name: 'GitHub',
+    emojis: [
+      {
+        id: 'octocat',
+        name: 'Octocat',
+        keywords: ['github'],
+        skins: [{ src: './octocat.png' }],
+      },
+      {
+        id: 'shipit',
+        name: 'Squirrel',
+        keywords: ['github'],
+        skins: [
+          { src: './shipit-1.png' },
+          { src: './shipit-2.png' },
+          { src: './shipit-3.png' },
+          { src: './shipit-4.png' },
+          { src: './shipit-5.png' },
+          { src: './shipit-6.png' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'gifs',
+    name: 'GIFs',
+    emojis: [
+      {
+        id: 'party_parrot',
+        name: 'Party Parrot',
+        keywords: ['dance', 'dancing'],
+        skins: [{ src: './party_parrot.gif' }],
+      },
+    ],
+  },
+];
+
 const ChatContainer = () => {
   const [text, setText] = useState('');
   const [messagelist, setMessageList] = useState([]);
+  // const [emojiData, setEmojiData] = useState(null);
+
+  // useEffect(() => {
+  //   const fetchEmojiData = async () => {
+  //     const response = await fetch(
+  //       'https://cdn.jsdelivr.net/npm/@emoji-mart/data'
+  //     );
+  //     const data = await response.json();
+  //     setEmojiData(data);
+  //   };
+
+  //   fetchEmojiData();
+  // }, []);
+
   function handleOnEnter(text) {
     const randomIndex = Math.floor(Math.random() * userNames.length);
     const messagefrom = userNames[randomIndex];
@@ -45,6 +101,10 @@ const ChatContainer = () => {
         theme='dark'
         className='input-emoji'
       />
+
+      {/* <div>
+        <Picker data={emojiData} theme='dark' onEmojiSelect={console.log} />
+      </div> */}
     </div>
   );
 };

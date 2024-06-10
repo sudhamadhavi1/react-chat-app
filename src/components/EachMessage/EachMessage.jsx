@@ -30,7 +30,7 @@ const EachMessage = (props) => {
           <button type='button' onClick={onClickLike} className='like-button'>
             <AiOutlineLike className='like-icon' />
           </button>
-          {count > 0 ? <p>{count}</p> : null}
+          {count > 0 ? <p className='count'>{count}</p> : null}
         </div>
       </div>
     </li>
